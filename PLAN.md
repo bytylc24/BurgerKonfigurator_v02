@@ -30,7 +30,7 @@ Split: A owns the model and the Immutable pattern, B owns persistence and the ma
 - `.gitignore` (target/, .idea/, *.iml, out/, .vscode/, .DS_Store), `README.md` stub
 - Done when: tests run and the window opens
 
-### [ ] T2 - Interface Zutat and ingredient enums (A) - depends on T1
+### [x] T2 - Interface Zutat and ingredient enums (A) - depends on T1
 - Interface `Zutat`: `bezeichnung()`, `preis()`, `kalorien()`
 - Enums `Brot`, `Patty`, `Kaese` (with `KEIN`), `Sauce` (with `KEINE`), `Gemuese`, `Extra`, each 3 to 6 values with realistic price and kcal
 - `toString()` returns the German name (so ComboBoxes show it nicely)
