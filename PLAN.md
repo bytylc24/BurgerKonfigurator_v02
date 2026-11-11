@@ -23,7 +23,7 @@ Split: A owns the model and the Immutable pattern, B owns persistence and the ma
 
 ## Tasks
 
-### [ ] T1 - Project setup (A)
+### [x] T1 - Project setup (A)
 - Maven project with Maven Wrapper, Java 21, JavaFX 21, Jackson + jsr310, JUnit 5
 - `module-info.java`, packages from CLAUDE.md
 - `App.java`: window "Burger-Konfigurator" (1000x700) with a TabPane and the tabs "Konfigurator", "Meine Burger", "Bestellhistorie"
