@@ -1,14 +1,55 @@
 # PLAN.md - Burger-Konfigurator
 
-Owners: **A** = Yll, **B** = partner.
+Owners: **A** = Yll, **B** = partner (Fabian).
 
-Git workflow (details in `docs/git-anleitung.md`):
-1. `git checkout main`, `git pull`, then a new branch per task: `git checkout -b t<nr>-<short-name>` (e.g. `t3-exceptions`).
-2. Work, run the tests, commit on the branch, `git push -u origin <branch>`.
-3. Open a Pull Request on GitHub. The other person looks at it and clicks "Merge". Nobody pushes directly to `main`.
-4. After the merge both run `git checkout main` and `git pull`.
+## Git-Anleitung (kurz)
 
-A task may only start when its dependencies are ticked and merged into `main`.
+Es gibt genau **zwei Branches**, die immer bleiben:
+- `main`: hier arbeitet **Yll (A)**
+- `fabian`: hier arbeitet **Fabian (B)**
+
+Vor jedem Commit: `mvnw.cmd -q clean test` (Mac: `./mvnw -q clean test`) muss ohne Fehler laufen.
+
+**Yll (auf `main`)**
+```bash
+git checkout main
+git pull                      # vor dem Arbeiten: neuesten Stand holen
+# arbeiten, testen
+git add .
+git commit -m "feat: T5 Burger und BurgerBuilder"
+git push
+```
+
+**Fabian (auf `fabian`)**
+
+Einmalig, um den Branch zu erstellen:
+```bash
+git checkout main
+git pull
+git checkout -b fabian
+git push -u origin fabian
+```
+Bei jeder Aufgabe:
+```bash
+git checkout fabian
+git pull origin main          # 1. Ylls neuen Stand von main holen
+# arbeiten, testen
+git add .
+git commit -m "feat: T3 Exceptions"
+git push                      # 2. auf den eigenen Branch hochladen
+```
+Wenn eine Aufgabe fertig ist:
+1. Auf GitHub: **Pull requests → New pull request** → base `main` ← compare `fabian` → **Create pull request**
+2. **Merge pull request** → **Confirm merge** (den Branch `fabian` **nicht** löschen, er wird weiter benutzt)
+3. Yll macht danach `git pull` auf `main`, dann hat er Fabians Sachen.
+
+**Regeln**
+- Fabian pusht nie direkt auf `main`, Yll arbeitet nie auf `fabian`.
+- Immer zuerst pullen, dann arbeiten. Wenn eine Aufgabe fertig ist, sofort pushen (Fabian: und einen Pull Request machen).
+- Konflikt beim Pull: Die Datei in IntelliJ öffnen → **Resolve** → richtige Version wählen → `git add .`, `git commit`, `git push`.
+- Mehr Hilfe (Einrichtung, IntelliJ, typische Fehler): `docs/git-anleitung.md`
+
+A task may only start when its dependencies are ticked and on `main`.
 Every task ends with an explanation file in `docs/erklaerungen/` (see CLAUDE.md section 9).
 
 Split: A owns the model and the Immutable pattern, B owns persistence and the main GUI. The tasks are arranged so that A and B never edit the same files at the same time.

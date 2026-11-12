@@ -4,7 +4,7 @@ Claude Code reads this file automatically. It describes the project, the code st
 
 Repository: https://github.com/bytylc24/BurgerKonfigurator_v02.git
 
-Git workflow: every task is done on its own branch and reaches `main` only through a Pull Request (step-by-step guide in German: `docs/git-anleitung.md`).
+Git workflow: two permanent branches. Person A (Yll) works on `main`, Person B (Fabian) works on `fabian` and brings his work to `main` with a Pull Request. Short guide in `PLAN.md`, details in `docs/git-anleitung.md`.
 
 ## 1. Project
 
@@ -133,10 +133,10 @@ Errors are shown in `Alert` dialogs, never as stack traces.
 
 1. Read `PLAN.md`. Work only on the task the user names.
 2. Prepare the branch:
-   - `git checkout main` and `git pull`.
-   - Create the task branch: `git checkout -b t<nr>-<short-name>` (e.g. `t5-burger`). If the user is already on the branch of this task, stay on it.
-   - Never work directly on `main`.
-   - Allowed git commands: `status`, `diff`, `log`, `pull`, `fetch`, `checkout`, `checkout -b`, `branch`.
+   - Task of Person A: `git checkout main` and `git pull`.
+   - Task of Person B: `git checkout fabian` and `git pull origin main` (gets A's latest work).
+   - Do not create other branches.
+   - Allowed git commands: `status`, `diff`, `log`, `pull`, `fetch`, `checkout`, `branch`.
    - **Never run `git add`, `git commit`, `git push` or `git merge` unless the user explicitly asks for it in this conversation.** Normally the students test, commit, push and open the Pull Request themselves.
 3. Check that all dependencies of the task are ticked in `PLAN.md` and present in the code. If not, stop and say what is missing.
 4. Briefly say what you will create, then implement it in the simple style of section 2.
@@ -149,7 +149,7 @@ Errors are shown in `Alert` dialogs, never as stack traces.
    - **How to test**: test command, start command, what to click and what should happen
    - **Files to commit**
    - **Suggested commit message** (format `feat: ...`, `fix: ...`, `test: ...`, `docs: ...`)
-   - **Git steps**: `git push -u origin <branch>`, then open a Pull Request on GitHub, the partner reviews and merges it, then both run `git checkout main` and `git pull`
+   - **Git steps**: A: `git push` on `main`. B: `git push` on `fabian`, then a Pull Request `fabian` -> `main` on GitHub (do not delete the branch), then A runs `git pull`
 
 ## 9. Explanation file per task
 
