@@ -1,7 +1,14 @@
 # PLAN.md - Burger-Konfigurator
 
-Owners: **A** = Yll, **B** = partner. Both work on `main`: always pull before starting, commit and push when done.
-A task may only start when its dependencies are ticked and pushed.
+Owners: **A** = Yll, **B** = partner.
+
+Git workflow (details in `docs/git-anleitung.md`):
+1. `git checkout main`, `git pull`, then a new branch per task: `git checkout -b t<nr>-<short-name>` (e.g. `t3-exceptions`).
+2. Work, run the tests, commit on the branch, `git push -u origin <branch>`.
+3. Open a Pull Request on GitHub. The other person looks at it and clicks "Merge". Nobody pushes directly to `main`.
+4. After the merge both run `git checkout main` and `git pull`.
+
+A task may only start when its dependencies are ticked and merged into `main`.
 Every task ends with an explanation file in `docs/erklaerungen/` (see CLAUDE.md section 9).
 
 Split: A owns the model and the Immutable pattern, B owns persistence and the main GUI. The tasks are arranged so that A and B never edit the same files at the same time.

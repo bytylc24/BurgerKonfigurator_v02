@@ -4,6 +4,8 @@ Claude Code reads this file automatically. It describes the project, the code st
 
 Repository: https://github.com/bytylc24/BurgerKonfigurator_v02.git
 
+Git workflow: every task is done on its own branch and reaches `main` only through a Pull Request (step-by-step guide in German: `docs/git-anleitung.md`).
+
 ## 1. Project
 
 JavaFX desktop application in which users configure individual burgers.
@@ -130,7 +132,12 @@ Errors are shown in `Alert` dialogs, never as stack traces.
 ## 8. Workflow for Claude Code
 
 1. Read `PLAN.md`. Work only on the task the user names.
-2. Run `git pull` first. You may use read-only git commands (`status`, `diff`, `log`, `pull`). **Never run `git add`, `git commit` or `git push`.** The students test and commit themselves.
+2. Prepare the branch:
+   - `git checkout main` and `git pull`.
+   - Create the task branch: `git checkout -b t<nr>-<short-name>` (e.g. `t5-burger`). If the user is already on the branch of this task, stay on it.
+   - Never work directly on `main`.
+   - Allowed git commands: `status`, `diff`, `log`, `pull`, `fetch`, `checkout`, `checkout -b`, `branch`.
+   - **Never run `git add`, `git commit`, `git push` or `git merge` unless the user explicitly asks for it in this conversation.** Normally the students test, commit, push and open the Pull Request themselves.
 3. Check that all dependencies of the task are ticked in `PLAN.md` and present in the code. If not, stop and say what is missing.
 4. Briefly say what you will create, then implement it in the simple style of section 2.
 5. Write unit tests (for model, service, persistence; not for controllers). Run `mvnw.cmd -q clean test` on Windows or `./mvnw -q clean test` otherwise, and fix all failures.
@@ -142,6 +149,7 @@ Errors are shown in `Alert` dialogs, never as stack traces.
    - **How to test**: test command, start command, what to click and what should happen
    - **Files to commit**
    - **Suggested commit message** (format `feat: ...`, `fix: ...`, `test: ...`, `docs: ...`)
+   - **Git steps**: `git push -u origin <branch>`, then open a Pull Request on GitHub, the partner reviews and merges it, then both run `git checkout main` and `git pull`
 
 ## 9. Explanation file per task
 
