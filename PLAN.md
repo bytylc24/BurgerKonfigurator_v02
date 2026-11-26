@@ -84,7 +84,7 @@ Split: A owns the model and the Immutable pattern, B owns persistence and the ma
 - `toString()` returns the German name (so ComboBoxes show it nicely)
 - Done when: test checks all values have price >= 0 and a name
 
-### [ ] T3 - Exceptions (B) - depends on T1
+### [x] T3 - Exceptions (B) - depends on T1
 - `BurgerException extends RuntimeException`, `ValidationException` and `PersistenceException extend BurgerException`
 - Done when: compiles, small test
 
