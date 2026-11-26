@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Konfigurator: Formular zum Zusammenstellen eines Burgers.
+     Die CheckBoxen sind Platzhalter, in T9 werden sie aus den Enums erzeugt. -->
+<ScrollPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="at.htl.burgerkonfigurator.controller.KonfiguratorController"
+            fitToWidth="true" styleClass="page">
+
+    <VBox spacing="14" styleClass="page">
+        <padding><Insets top="24" right="28" bottom="24" left="28"/></padding>
+
+        <Label text="Burger konfigurieren" styleClass="page-title"/>
+        <Label text="Stelle deinen Burger zusammen." styleClass="subtitle"/>
+
+        <Label text="Name des Burgers" styleClass="section-title"/>
+        <TextField fx:id="nameFeld" promptText="z. B. Mein Classic Burger" maxWidth="360"/>
+
+        <Separator/>
+
+        <GridPane hgap="16" vgap="10">
+            <Label text="Brot" styleClass="section-title" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="brotBox" promptText="Brot auswählen" prefWidth="250"
+                      GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Patty" styleClass="section-title" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="pattyBox" promptText="Patty auswählen" prefWidth="250"
+                      GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Käse" styleClass="section-title" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="kaeseBox" promptText="Käse auswählen" prefWidth="250"
+                      GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Sauce" styleClass="section-title" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="sauceBox" promptText="Sauce auswählen" prefWidth="250"
+                      GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <Label text="Gemüse (höchstens 5)" styleClass="section-title"/>
+        <FlowPane fx:id="gemueseBox" hgap="18" vgap="8">
+            <CheckBox text="Salat"/>
+            <CheckBox text="Tomate"/>
+            <CheckBox text="Zwiebel"/>
+            <CheckBox text="Essiggurke"/>
+            <CheckBox text="Jalapeños"/>
+        </FlowPane>
+
+        <Label text="Extras (höchstens 5)" styleClass="section-title"/>
+        <FlowPane fx:id="extrasBox" hgap="18" vgap="8">
+            <CheckBox text="Bacon"/>
+            <CheckBox text="Spiegelei"/>
+            <CheckBox text="Avocado"/>
+            <CheckBox text="Röstzwiebeln"/>
+        </FlowPane>
+
+        <Separator/>
+
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <Label text="Preis:" styleClass="section-title"/>
+            <Label fx:id="preisLabel" text="0,00 EUR" styleClass="price"/>
+            <Label text="Kalorien:" styleClass="section-title"/>
+            <Label fx:id="kcalLabel" text="0 kcal" styleClass="price"/>
+        </HBox>
+
+        <Button fx:id="erstellenButton" text="Burger erstellen" styleClass="primary-button"/>
+
+        <!-- Fehlermeldungen in Rot, am Anfang leer -->
+        <Label fx:id="fehlerLabel" styleClass="error-label" wrapText="true"/>
+    </VBox>
+</ScrollPane>

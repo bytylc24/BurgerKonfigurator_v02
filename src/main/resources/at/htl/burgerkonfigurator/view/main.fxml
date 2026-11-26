@@ -4,9 +4,10 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.BorderPane?>
 
+<!-- Hauptfenster: TabPane mit den drei Seiten, jede Seite ist eine eigene FXML-Datei -->
 <BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="at.htl.burgerkonfigurator.controller.KonfiguratorController"
+            fx:controller="at.htl.burgerkonfigurator.controller.MainController"
             stylesheets="@style.css">
 
     <center>
@@ -24,7 +25,7 @@
                     </content>
                 </Tab>
 
-                <Tab text="Historie">
+                <Tab text="Bestellhistorie">
                     <content>
                         <fx:include source="historie.fxml"/>
                     </content>

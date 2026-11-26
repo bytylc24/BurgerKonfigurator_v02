@@ -88,7 +88,7 @@ Split: A owns the model and the Immutable pattern, B owns persistence and the ma
 - `BurgerException extends RuntimeException`, `ValidationException` and `PersistenceException extend BurgerException`
 - Done when: compiles, small test
 
-### [ ] T4 - GUI layout, no logic (B) - depends on T1
+### [x] T4 - GUI layout, no logic (B) - depends on T1
 - `main.fxml` with TabPane, `konfigurator.fxml`, `meine-burger.fxml`, `historie.fxml` (via `fx:include`), empty controllers, `style.css`
 - All controls from CLAUDE.md section 7, dummy values allowed
 - Done when: app shows all three tabs with all controls

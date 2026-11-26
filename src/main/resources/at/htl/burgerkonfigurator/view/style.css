@@ -53,3 +53,8 @@
 .text-field, .combo-box, .list-view, .table-view {
     -fx-background-radius: 5px;
 }
+
+.error-label {
+    -fx-text-fill: #c0392b;
+    -fx-font-weight: bold;
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Meine Burger: Tabelle aller gespeicherten Burger mit Buttons -->
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="at.htl.burgerkonfigurator.controller.MeineBurgerController"
+      spacing="14" styleClass="page">
+
+    <padding><Insets top="24" right="28" bottom="24" left="28"/></padding>
+
+    <Label text="Meine Burger" styleClass="page-title"/>
+    <Label text="Deine gespeicherten Burger im Überblick." styleClass="subtitle"/>
+
+    <CheckBox fx:id="nurFavoritenCheck" text="nur Favoriten"/>
+
+    <TableView fx:id="burgerTabelle" prefHeight="360" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="nameSpalte" text="Name" prefWidth="150"/>
+            <TableColumn fx:id="zutatenSpalte" text="Zutaten" prefWidth="330"/>
+            <TableColumn fx:id="preisSpalte" text="Preis" prefWidth="90"/>
+            <TableColumn fx:id="kcalSpalte" text="kcal" prefWidth="70"/>
+            <TableColumn fx:id="favoritSpalte" text="Favorit" prefWidth="70"/>
+            <TableColumn fx:id="basisSpalte" text="abgeleitet von" prefWidth="150"/>
+        </columns>
+        <placeholder>
+            <Label text="Noch keine Burger vorhanden."/>
+        </placeholder>
+    </TableView>
+
+    <HBox spacing="10">
+        <Button fx:id="vorlageButton" text="Als Vorlage bearbeiten"/>
+        <Button fx:id="favoritButton" text="Favorit an/aus"/>
+        <Button fx:id="loeschenButton" text="Löschen"/>
+        <Button fx:id="bestellenButton" text="Bestellen" styleClass="primary-button"/>
+    </HBox>
+</VBox>
