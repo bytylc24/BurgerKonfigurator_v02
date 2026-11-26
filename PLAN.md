@@ -93,7 +93,7 @@ Split: A owns the model and the Immutable pattern, B owns persistence and the ma
 - All controls from CLAUDE.md section 7, dummy values allowed
 - Done when: app shows all three tabs with all controls
 
-### [ ] T5 - Burger record and BurgerBuilder (A) - depends on T2, T3
+### [x] T5 - Burger record and BurgerBuilder (A) - depends on T2, T3
 - `Burger` as in CLAUDE.md section 5 (copied lists, validation, `mit...` / `ohne...`, `preis()`, `kalorien()`)
 - `BurgerBuilder` with `von(Burger)` and `build()`
 - Done when: tests for valid burger, every validation rule, unmodifiable lists, original unchanged, new id + basisId, price and kcal
