@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="at.htl.burgerkonfigurator.controller.HistorieController"
+      spacing="14" styleClass="page">
+    <padding><Insets top="24" right="28" bottom="24" left="28"/></padding>
+
+    <Label text="Bestellhistorie" styleClass="page-title"/>
+    <Label text="Hier findest du deine bisherigen Bestellungen." styleClass="subtitle"/>
+
+    <TableView prefHeight="360">
+        <columns>
+            <TableColumn text="Bestellnr." prefWidth="100"/>
+            <TableColumn text="Datum" prefWidth="150"/>
+            <TableColumn text="Burger" prefWidth="220"/>
+            <TableColumn text="Preis" prefWidth="100"/>
+            <TableColumn text="Status" prefWidth="140"/>
+        </columns>
+        <placeholder>
+            <Label text="Noch keine Bestellungen vorhanden."/>
+        </placeholder>
+    </TableView>
+</VBox>

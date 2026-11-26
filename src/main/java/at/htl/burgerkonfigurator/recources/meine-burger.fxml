@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="at.htl.burgerkonfigurator.controller.MeineBurgerController"
+      spacing="14" styleClass="page">
+
+    <padding>
+        <Insets top="24" right="28" bottom="24" left="28"/>
+    </padding>
+
+    <Label text="Meine Burger" styleClass="page-title"/>
+    <Label text="Deine gespeicherten Burger im Überblick." styleClass="subtitle"/>
+
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <Label text="Gespeicherte Burger" styleClass="section-title"/>
+        <Label text="(Beispieldaten)" styleClass="subtitle"/>
+    </HBox>
+
+    <ListView prefHeight="260" maxWidth="700">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Classic Burger – € 8,90"/>
+                <String fx:value="Cheese Burger – € 9,90"/>
+                <String fx:value="BBQ Burger – € 10,50"/>
+            </FXCollections>
+        </items>
+    </ListView>
+
+    <Separator/>
+
+    <HBox spacing="10">
+        <Button text="Burger anzeigen"/>
+        <Button text="Bearbeiten"/>
+        <Button text="Löschen"/>
+    </HBox>
+
+</VBox>

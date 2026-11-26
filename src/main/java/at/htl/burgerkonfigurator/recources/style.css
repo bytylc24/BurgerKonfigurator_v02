@@ -1,0 +1,55 @@
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-color: #f5f2ed;
+}
+
+.page {
+    -fx-background-color: #f5f2ed;
+}
+
+.page-title {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #38251b;
+}
+
+.subtitle {
+    -fx-text-fill: #786b62;
+    -fx-font-size: 13px;
+}
+
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #493326;
+}
+
+.price {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #287a3d;
+}
+
+.button {
+    -fx-cursor: hand;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 14px;
+}
+
+.primary-button {
+    -fx-background-color: #8b4513;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #e8dfd5;
+}
+
+.tab {
+    -fx-padding: 8px 18px;
+}
+
+.text-field, .combo-box, .list-view, .table-view {
+    -fx-background-radius: 5px;
+}
